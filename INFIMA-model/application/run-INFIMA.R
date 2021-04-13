@@ -5,7 +5,7 @@
 
 library(INFIMA)
 
-setwd('/p/keles/Collab_2014/volumeK/model/run081120')
+setwd('INFIMA-model/application/')
 load('inputs.RData')
 
 ## dt1: DO mouse eQTL results
@@ -42,7 +42,8 @@ results <- as.data.frame(infima_results)
 input_query <- query_input_data(infima_results, snp_id = 'rs51076312', ensembl = 'ENSMUSG00000037995', qtl_marker = '1_172713578')
 
 save(raw_data, model_data, prior, infima, infima_results, results,
-     file = 'results.RData', version = 2) # 
+     file = 'results.RData') # 
+
 
 #### adaptive liftover results linking GWAS to effector genes
 
@@ -60,7 +61,7 @@ load('/p/keles/Collab_2014/volumeK/liftover/main/examples.RData')
 
 # remove the infima results where 
 
-setwd('/p/keles/Collab_2014/volumeK/model/run081120')
+setwd('INFIMA-model/application/RData')
 load('inputs.RData')
 load('results.RData') 
 # raw_data, model_data, prior, infima, infima_results, results (as.data.table(infima_results))
