@@ -1,5 +1,3 @@
-[![DOI](https://zenodo.org/badge/354574536.svg)](https://zenodo.org/badge/latestdoi/354574536)
-
 # Code for the INFIMA paper
 
 This repository provides the key source code to reproduce the [data](https://doi.org/10.5281/zenodo.4625293) for the INFIMA paper. 
