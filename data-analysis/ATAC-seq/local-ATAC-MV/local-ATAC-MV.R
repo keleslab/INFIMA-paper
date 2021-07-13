@@ -1,5 +1,5 @@
 ## ----------------------------------------------------------
-##            Identification of local-ATAC-QTL
+##            Identification of local-ATAC-MV
 ## ----------------------------------------------------------
 
 library(VariantAnnotation)
@@ -15,7 +15,7 @@ library(GenomicAlignments)
 ## wget ftp://ftp-mouse.sanger.ac.uk/current_snps/mgp.v5.merged.snps_all.dbSNP142.vcf.gz
 ## wget ftp://ftp-mouse.sanger.ac.uk/REL-1505-SNPs_Indels/mgp.v5.merged.snps_all.dbSNP142.vcf.gz.tbi
 
-variant_dr <- 'data-analysis/ATAC-seq/mouse/local-ATAC-QTL/'
+variant_dr <- 'data-analysis/ATAC-seq/mouse/local-ATAC-MV/'
 fl <-
   file.path(variant_dr, 'mgp.v5.merged.snps_all.dbSNP142.vcf.gz')
 hdr <- scanVcfHeader(fl)
@@ -238,7 +238,7 @@ whichpeak <- rep(1:22200, snps.per.peak)
 # snpPvalue <- unlist(lmOut.wG)
 
 ## ----------------------------------------------------------
-## 47,062 local-ATAC-QTLs in 22,200 peaks
+## 47,062 local-ATAC-MVs in 22,200 peaks
 ## With data processing, the results are conveniently saved as
 ## 'data-analysis/ATAC-seq/mouse/RData/ATAC-QTL.RData'
 ## ----------------------------------------------------------

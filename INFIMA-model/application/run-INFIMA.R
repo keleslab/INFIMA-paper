@@ -52,7 +52,7 @@ library(GenomicAlignments)
 library(parallel)
 library(INFIMA)
 
-load('/p/keles/Collab_2014/volumeK/liftover/main/examples.RData')
+load('examples.RData')
 # the final 499 cases validated by INFIMA
 # dt, atac.mm10, res, gwas.peak, gwas.snps, gwas.df, gwas.mm10.peak.infima
 
@@ -93,12 +93,9 @@ ii <- findOverlaps(snps, peaks)
 snps <- snps[queryHits(ii)] # only 304 SNPs
 snps.all <- snps$name
 
-save(infima, snps, peaks, dt, res, file = 'run081420.RData')
 
 ###################################################
 
-setwd('/p/keles/Collab_2014/volumeK/model/run081120')
-load('run081420.RData')
 infima_res <- list(infima = infima, results = res)
 class(infima_res) <- 'infima_results'
 

@@ -21,7 +21,6 @@ promoter.loc <-
   promoters(gene.loc, upstream = 2000, downstream = 500)
 
 ### Part 2: get the cutsize info for all the promoters wrt all 8 strains.
-setwd('/p/keles/Collab_2014/volumeK/AlanAttie4/RData/cutsize/fiveprimeonly/')
 file.list <-
   list.files(path = 'data-analysis/ATAC-seq/mouse/RData/', pattern = '\\_ATAC_cutsize.RData$')
 
@@ -67,7 +66,7 @@ libfactors.1 <- libsizes / coveragesizes
 #[1] 1.679502 1.966592 2.177750 2.012178 2.076068 1.732596 1.623145 1.856826
 
 # normalize by the sequencing depth
-load('~/Dropbox/AlanAttie4/AlignmentResults.RData')
+load('AlignmentResults.RData')
 # designInfo.ref
 libfactors.2 <- rep(0, 8)
 for (i in 1:8) {
@@ -94,7 +93,7 @@ summary(pro.atac.n)
 pro.atac.n <- as.data.table(pro.atac.n)
 
 
-setwd('~/Dropbox/RNA-seq/DESeq2/')
+setwd('RNA-seq/DESeq2/')
 # all 8 strains
 strains <- c('129', 'AJ', 'B6', 'Cast', 'NOD', 'NZO', 'PWK', 'WSB')
 # color scheme for all 8 strains
@@ -111,7 +110,7 @@ colors <- c(
 
 s1 <- 'B6'
 for (s2 in c('129', 'AJ', 'Cast', 'NOD', 'NZO', 'PWK', 'WSB')) {
-  dir <- paste0('~/Dropbox/RNA-seq/DESeq2/', s1, '-', s2, '/')
+  dir <- paste0('RNA-seq/DESeq2/', s1, '-', s2, '/')
   load(paste0(dir, 'DESeqResultsNew.RData'))
   
   s1.col <- colors[which(strains == s1)]
